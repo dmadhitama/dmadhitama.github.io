@@ -20,7 +20,6 @@
         <p>My name is Donny Mirza Adhitama. You can call me Donny. Recently, I am working as a Senior Data Scientist in the one of Indonesian Healthcare-IT provider start-up company and Data Science Facilitator in a Indonesian online course platform.</p>
         <p>I am an AI Engineer, Data Scientist, and Researcher who developed a growing interest in management upon assuming the role of Product/Project Manager. My background encompasses both academic and industry experience in AI technology, particularly in signal and image processing.</p>
         <p>Additionally, I have extensive hands-on experience utilizing AI toolkits such as Scikit-Learn, TensorFlow, PyTorch, and other relevant tools. Moreover, I have experience teaching Data Science material aligned with my expertise as an AI Engineer.</p>
-        <p>You can see my full profile in my LinkedIn profile here.</p>
       </div>
     </div>
   </section>
@@ -45,7 +44,7 @@
         </div>
       </div>
 
-      <!-- Project 1 Modal (Put detailed description here) -->
+      <!-- Project 1 Modal, Put detailed description here -->
       <div class="modal fade" id="project1Modal" tabindex="-1" role="dialog" aria-labelledby="project1ModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -78,31 +77,215 @@
         </div>
       </div>
   
-      <!-- Project 2 (Copy and modify for other projects) -->
+      <!-- Project 2 -->
       <div class="col-md-4 mb-4">
         <div class="card">
           <img src="images/projects/2.png" class="card-img-top" alt="Project 2">
           <div class="card-body">
             <h5 class="card-title">Auto-Parts Counter System</h5>
             <p class="card-text">Developed advanced auto-parts counter using object detection and tracking, aiming to replace weight-scaling method, showing promising results by February 2020.</p>
-            <a href="#" class="btn btn-primary">Blog Post</a>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project2Modal">
+                <a href="#" class="btn btn-primary">See more</a>
+            </button>
             <a href="#" class="btn btn-secondary">Source Code</a>
           </div>
         </div>
       </div>
+
+      <!-- Project 2 Modal, Put detailed description here -->
+      <div class="modal fade" id="project2Modal" tabindex="-1" role="dialog" aria-labelledby="project2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="project2ModalLabel">Auto-Parts Counter System</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img src="images/projects/2.png" class="card-img-top" alt="Project 1">
+                <p>We designed a cutting-edge auto-parts counter system, integrating object detection, computer vision for object identification, and tracking capabilities. This initiative aimed to supplant the conventional weight-scaling method previously employed for auto-parts counting. The former method's susceptibility to errors due to slight variations in the weight of each produced auto-part necessitated a more precise solution, which our AI-based auto-parts counter system provides. Herein, I outline the progress made in this project up to February 2020.</p>
+                
+                <ol>
+                  <li>Due to the visual similarities among the auto-parts, we found it feasible to collect images of the parts from various angles. Camera placement was not extensively considered as the machine environment producing the auto-parts was highly specific, reducing the likelihood of flexible camera placement options.</li>
+                  <li>Upon gathering a selection of these images, we proceeded to annotate the dataset and then train the object-detection model. Given the singular object type and its relatively low complexity, a compact and straightforward model sufficed for our purposes.</li>
+                  <li>Following the model training phase, we integrated additional algorithms for object tracking. These included rule-based and computer vision-based approaches. The object tracker algorithm not only tracked detected objects but also counted them as long as they remained within the camera's field of view.</li>
+                </ol>
+              
+                <p>This project remained at the prototype and proof-of-concept stage throughout my tenure until I departed from the company in February 2020. Despite not being fully implemented at that time, the outcomes attained were highly promising.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>  
   
-      <!-- Project 3 (Copy and modify for other projects) -->
+      <!-- Project 3 -->
       <div class="col-md-4 mb-4">
         <div class="card">
           <img src="images/projects/3.png" class="card-img-top" alt="Project 3">
           <div class="card-body">
             <h5 class="card-title">Paper Document Information Extraction</h5>
             <p class="card-text">Developing automated document information extraction system for handwritten and computer-generated text, employing segmentation, AI models, and OCR techniques.</p>
-            <a href="#" class="btn btn-primary">Blog Post</a>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project3Modal">
+                <a href="#" class="btn btn-primary">See more</a>
+            </button>
             <a href="#" class="btn btn-secondary">Source Code</a>
           </div>
         </div>
+      </div>      
+
+      <!-- Project 3 Modal, Put detailed description here -->
+      <div class="modal fade" id="project3Modal" tabindex="-1" role="dialog" aria-labelledby="project3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="project3ModalLabel">Paper Document Information Extraction</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img src="images/projects/3.png" class="card-img-top" alt="Project 1">
+                <p>The objective of this project is to develop an automated system capable of extracting information from paper documents. These documents consist of both handwritten and computer-generated text, all of which necessitate extraction. This project can be divided into two methods:</p>
+                
+                <ol>
+                  <li>Handwritten text extraction. The texts are fortunately situated in highly specific locations. Leveraging this advantage, we manually delineate these areas as regions of interest. Within these defined areas, segmentation is executed to generate overlapped segmented regions, each representing an individual character. Subsequently, a pre-trained AI model is employed to infer the handwritten character images into single characters. Lastly, a rule-based algorithm facilitates the conversion of multiple characters into sentences.</li>
+                  <li>Computer-generated text. For this part, we can readily apply an OCR technique for conversion. Although this technique is robust, it requires further scrutiny of the results. Regrettably, we haven't yet conducted additional experiments in this area. However, our approach for post-processing after the system generates the OCR outputs is well-defined.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
+  
+      <!-- Project 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/4.png" class="card-img-top" alt="Project 4">
+          <div class="card-body">
+            <h5 class="card-title">Preprocessing System for Speech Enhancement</h5>
+            <p class="card-text">Developed preprocessing methods for speech signal enhancement: noise removal, dereverberation, and speaker separation, utilizing AI models for effectiveness.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project4Modal">
+                <a href="#" class="btn btn-primary">See more</a>
+            </button>
+            <a href="#" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>      
+
+      <!-- Project 4 Modal, Put detailed description here -->
+      <div class="modal fade" id="project4Modal" tabindex="-1" role="dialog" aria-labelledby="project4ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="project4ModalLabel">Preprocessing System for Speech Enhancement</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img src="images/projects/4.png" class="card-img-top" alt="Project 1">
+                <p>Design a preprocessing system to enhance speech signal before it proceeds to the ASR (automatic speech recognition) models. There are some approaches that I worked on, for instance, noise-removal, dereverberation, and speaker separation for overlapping speaker cases.</p>
+                
+                <ol>
+                  <li>Noise removal. Speech audio signals are often disrupted by environmental noise, typically categorized as additive noise, which poses a straightforward challenge. Initially, I employed a predefined signal filter in the noise removal process. However, due to the diverse nature of additive noise types, an alternative approach utilizing AI models was pursued. To facilitate this, an exploration and collection phase of potential additive noises occurring in real-world scenarios was conducted. These noises were then used to augment clean speech audio, enabling the training of AI models with the anticipation that they could effectively differentiate between learned and similar additive noises.</li>
+                  <li>Dereverberation. Reverberation represents another type of noise, characterized as a convolutional noise. Unlike additive noise, defining reverberation is more complex due to the necessity of estimating the impulse response responsible for its occurrence. This task is challenging as it requires the estimation of one or multiple impulse responses. Even with the aid of AI models and extensive training using reverberated data, including their impulse responses, accurately defining reverberation remains difficult.</li>
+                  <li> Speaker separation. Another type of additive noise is overlapped speaker noise, which is generated by human speech unintended for recording. This noise typically exhibits very low energy or amplitude, resulting in a babbling sound that even human ears struggle to percieve. To address this, we must isolate and remove this type of speech separately, requiring the use of AI modeling. Numerous research avenues exist for this approach, although results have been imperfect. Occasionally, the AI model may erroneously remove non-babble speech. Experimentation with this method continued beyond my resignation from the company.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Project 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/5.png" class="card-img-top" alt="Project 5">
+          <div class="card-body">
+            <h5 class="card-title">Design a wake-up word algorithm</h5>
+            <p class="card-text">Implemented wake-up word feature for ASR applications, defining trigger phrases and experimenting with speech features like MFCC and PLP.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project5Modal">
+                <a href="#" class="btn btn-primary">See more</a>
+            </button>
+            <a href="#" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>      
+
+      <!-- Project 5 Modal, Put detailed description here -->
+      <div class="modal fade" id="project5Modal" tabindex="-1" role="dialog" aria-labelledby="project5ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="project5ModalLabel">Design a wake-up word algorithm</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img src="images/projects/5.png" class="card-img-top" alt="Project 1">
+                <p>The wake-up word project was launched to streamline certain speech applications. Instead of manually activating an Automatic Speech Recognition (ASR) application with a trigger button, the wake-up word feature allows for activation by specific user commands, such as "Hello system!" or "OK system!". Developing and experimenting with the wake-up word system is relatively straightforward.</p>
+                
+                <ol>
+                  <li>The initial step involves defining the specific words or phrases to serve as the wake-up word.</li>
+                  <li>I proceeded to determine the speech features to utilize, opting for features such as Mel-Frequency Cepstral Coefficients (MFCC) and Perceptual Linear Prediction (PLP). By experimenting with these selected features, I aimed to evaluate their performance and determine which one yields superior results.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Project 6 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/6.png" class="card-img-top" alt="Project 6">
+          <div class="card-body">
+            <h5 class="card-title">Blood Cell Detection and Localization</h5>
+            <p class="card-text">Developed blood cell detection system using object detection AI model, following steps: dataset augmentation, model exploration, training, and evaluation.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project6Modal">
+                <a href="#" class="btn btn-primary">See more</a>
+            </button>
+            <a href="#" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>      
+
+      <!-- Project 6 Modal, Put detailed description here -->
+      <div class="modal fade" id="project6Modal" tabindex="-1" role="dialog" aria-labelledby="project6ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="project6ModalLabel">Blood Cell Detection and Localization</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img src="images/projects/6.png" class="card-img-top" alt="Project 1">
+                <p>This project proceeded in a straightforward manner. The company I collaborated with provided a dataset comprising blood cell images, encompassing both red and white blood cells. The objective was to train an AI model, specifically an object detection model, to accurately detect and localize both red and white blood cells within the images. The workflow I followed was also straightforward.</p>
+                
+                <ol>
+                  <li>I augmented the image dataset and divided it into three subsets: training, validation, and test datasets.</li>
+                  <li>I explored and experimented with various existing object detection models, utilizing different backbone models, using the training and validation datasets.</li>
+                  <li>Finally, I tested the trained models using the test dataset and evaluated the results obtained from each model.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>  
   
     </div> 
   </section>
