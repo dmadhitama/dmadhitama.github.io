@@ -8,35 +8,35 @@
     "summary": "A data scientist, AI engineer, programmer, and data enthusiast. All at once.",
     "profiles": [
       { "network": "github", "username": "mmaluhia", "url": "http://github.com/dmadhitama" },
-      { "network": "linkedin", "username": "mollymaluhia", "url": "http://linkedin.com/in/dmadhitama" },
-      { "network": "twitter", "username": "mollymal", "url": "http://twitter.com/changeme" },
-      { "network": "instagram", "username": "molly", "url": "http://instagram.com/changeme" }
+      { "network": "linkedin", "username": "mollymaluhia", "url": "http://linkedin.com/in/dm-adhitama" },
+      { "network": "instagram", "username": "molly", "url": "http://instagram.com/dm_adhitama" }
     ]
   },
   "interests": [
-    { "name": "Interactive media" },
-    { "name": "Neuromorphic Computing" },
-    { "name": "Quantum Computing" },
-    { "name": "Robotics" },
-    { "name": "3D Graphics" }
+    { "name": "Artificial Intelligence" },
+    { "name": "Machine Learning/Deep Learning" },
+    { "name": "Data Science" },
+    { "name": "Data Visualization" },
+    { "name": "Computer Vision" },
+    { "name": "Digital Signal Processing" },
+    { "name": "Speech Processing" },
+    { "name": "Natural Language Processing" }
   ],
   "skills": [
     {
       "name": "Languages and Frameworks",
-      "keywords": [ "C", "C++", "Java", "Javascript", "Assembly", "Common Lisp" ]
+      "keywords": [ "Python", "PyTorch", "Tensorflow", "Scikit-Learn", "Scipy", "Pandas", "Matlab", "C/C++" ]
     },
     {
       "name": "Toolsets/OS",
-      "keywords": [ "MacOS", "Ubuntu", "Git/GitHub", "g++", "TI LaunchPad" ]
+      "keywords": [ "Ubuntu", "Windows", "MacOS", "Bash", "Git/GitHub" ]
     }
   ],
   "education": [
     {
-      "institution": "University of Hawaii, Honolulu, HI",
-      "area": "Computer Science (expected Spring, 2018)",
-      "studyType": "B.S.",
-      "startDate": "2013-09-01",
-      "endDate": "Present",
+      "institution": "Telkom University, Bandung, Indonesia",
+      "area": "Telecommunication Engineering (graduated June 2013)",
+      "studyType": "B.S. (Sarjana Teknik/S.T.)",
       "courses": [
       ]
     }
