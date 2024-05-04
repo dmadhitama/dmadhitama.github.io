@@ -34,38 +34,55 @@
   ],
   "education": [
     {
+      "institution": "Sejong University, Seoul, South Korea",
+      "area": "Artificial Intelligence / Intelligence Mechatronics (Withdrawn)",
+      "studyType": "Ph.D.",
+      "startDate": "2023-09-01",
+      "endDate": "2024-01-01",
+      "courses": [
+      ]
+    },
+    {
+      "institution": "Institut Teknologi Bandung, Bandung, Indonesia",
+      "area": "Electrical Engineering (Biomedical Engineering Research Group)",
+      "studyType": "M.Sc. (Magister Teknik/M.T.)",
+      "startDate": "2015-01-01",
+      "endDate": "2018-03-04",
+      "courses": [
+      ]
+    },
+    {
       "institution": "Telkom University, Bandung, Indonesia",
-      "area": "Telecommunication Engineering (graduated June 2013)",
+      "area": "Telecommunication Engineering",
       "studyType": "B.S. (Sarjana Teknik/S.T.)",
-      "startDate": "2013-09-01",
-      "endDate": "Present",
+      "startDate": "2008-09-01",
+      "endDate": "2013-06-13",
       "courses": [
       ]
     }
   ],
   "work": [
     {
-      "company": "UH Manoa Board of Publications",
-      "position": "Web Developer",
-      "website": "",
-      "startDate": "2015-08-01",
+      "company": "BitHealth (PT. Bithealth Teknologi Pintar)",
+      "position": "Senior Data Scientist",
+      "website": "https://bithealth.co.id/",
+      "startDate": "2024-01-01",
       "endDate": "Present",
-      "summary": "Head of online presence for Ka Leo",
+      "summary": "Digital health solution provider for Indonesia’s healthcare ecosystem",
       "highlights": [
-        "Maintain, update, and oversee official college newspaper website",
-        "Drive, design and build student-community projects for UH Manoa"
+        "Researching for some LLMs implementation with text-to-SQL generation and knowledge-based implementation with some technique including chain and agent, also with some prompt engineering."
       ]
     },
     {
-      "company": "UH Information Technology Services",
-      "position": "Help Desk Consultant",
-      "website": "http://www.hawaii.edu/its/",
-      "startDate": "2015-01-01",
-      "endDate": "2016-03-15",
+      "company": "Prosa.ai (PT. Prosa Solusi Cerdas)",
+      "position": "Artificial Intelligence Engineer & Product Manager",
+      "website": "https://prosa.ai/",
+      "startDate": "2020-03-30",
+      "endDate": "2024-08-31",
       "summary": "",
       "highlights": [
-        "Troubleshoot software, hardware and networking issues over the phone",
-        "Answer phone and email responses to the ITS Help Desk"
+        "Spearhead the Speech API product management, encompassing both state-of-the-art Speech-to-Text (STT) and Text-to-Speech (TTS) technologies. Our mission: is to forge strong connections between divisions and elevate product quality.",
+        "Led the charge in customizing the Speech API product for STT and TTS technologies, transforming projects into innovative solutions that set new industry standards."
       ]
     }
   ],
