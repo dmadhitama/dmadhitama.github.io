@@ -4,8 +4,10 @@
     "label": "Senior Data Scientist, Data Science Facilitator, and Independent Researcher",
     "picture": "https://github.com/kambergjohnson.png",
     "email": "dm.adhitama@gmail.com",
+    "phone": "808-333-4444",
     "website": "https://dmadhitama.github.io",
     "summary": "A data scientist, AI engineer, programmer, and data enthusiast. All at once.",
+    "location": { "address": "", "postalCode": "96822", "city": "Honolulu", "countryCode": "USA", "region": "Hawaii" },
     "profiles": [
       { "network": "github", "username": "mmaluhia", "url": "http://github.com/dmadhitama" },
       { "network": "linkedin", "username": "mollymaluhia", "url": "http://linkedin.com/in/dmadhitama" },
