@@ -34,8 +34,8 @@
   ],
   "education": [
     {
-      "institution": "Sejong University, Seoul, South Korea",
-      "area": "Artificial Intelligence / Intelligence Mechatronics (Withdrawn)",
+      "institution": "Sejong University, Seoul, South Korea (Withdrawn)",
+      "area": "Artificial Intelligence / Intelligence Mechatronics",
       "studyType": "Ph.D.",
       "startDate": "2023-09-01",
       "endDate": "2024-01-01",
@@ -74,15 +74,79 @@
       ]
     },
     {
+      "company": "Sejong University",
+      "position": "Researcher, Ph.D. student",
+      "website": "https://en.sejong.ac.kr/",
+      "startDate": "2023-09-01",
+      "endDate": "2024-01-01",
+      "summary": "251–300th World University Rankings 2024, 39th Asia University Ranking 2023 ",
+      "highlights": [
+        "Explore and experiment in the defect detection field, employing computer vision and artificial intelligence (AI). These endeavors serve dual purposes: to enhance our company projects and contribute to compelling journal publications.",
+        "Dive into the captivating world of multilabel video classification, where we strive to elevate the existing state-of-the-art methodologies through rigorous research and experimentation. Our mission: to make a lasting impact on the eld and share our discoveries through engaging publications."
+      ]
+    },
+    {
       "company": "Prosa.ai (PT. Prosa Solusi Cerdas)",
-      "position": "Artificial Intelligence Engineer & Product Manager",
+      "position": "Artificial Intelligence Product Manager",
       "website": "https://prosa.ai/",
-      "startDate": "2020-03-30",
-      "endDate": "2024-08-31",
-      "summary": "",
+      "startDate": "2023-02-01",
+      "endDate": "2023-08-31",
+      "summary": "AI Integrated Solutions - Text analysis and conversational AI to speech recognition for Bahasa Indonesia",
       "highlights": [
         "Spearhead the Speech API product management, encompassing both state-of-the-art Speech-to-Text (STT) and Text-to-Speech (TTS) technologies. Our mission: is to forge strong connections between divisions and elevate product quality.",
         "Led the charge in customizing the Speech API product for STT and TTS technologies, transforming projects into innovative solutions that set new industry standards."
+      ]
+    },
+    {
+      "company": "Prosa.ai (PT. Prosa Solusi Cerdas)",
+      "position": "Artificial Intelligence Engineer (Speech Processing)",
+      "website": "https://prosa.ai/",
+      "startDate": "2023-02-01",
+      "endDate": "2020-03-30",
+      "summary": "AI Integrated Solutions - Text analysis and conversational AI to speech recognition for Bahasa Indonesia",
+      "highlights": [
+        "Conduct discovery and experimentation in the realm of Automatic Speech Recognition (ASR) systems, with a focus on Bahasa Indonesia speech audio.",
+        "Dive into the world of Speech Signal Preprocessing Systems, where we'll explore methods like noise removal and dereverberation to enhance audio quality",
+        "Venture into the cutting-edge field of Speaker Separation, working to untangle overlapped speech in single-channel audio",
+        "Research and experiment to craft a captivating Wake-Up Word for our ASR activation application.",
+        "Take on the role of a linguistic detective as we measure and validate various ASR tools, delving into transcript processing tasks like typo correction, punctuation adjustments, and unifying prefixes and suffixes."
+      ]
+    },
+    {
+      "company": "Binar Academy (PT. Lentera Bangsa Benderang)",
+      "position": "Data Science Facilitator",
+      "website": "https://www.binaracademy.com/",
+      "startDate": "2023-02-01",
+      "endDate": "2023-07-31",
+      "summary": "Best quality education to upskilling digital talent in Indonesia",
+      "highlights": [
+        "Taking another course for this year wave. Ongoing since February 2024.",
+        "Dive into the world of data science teaching with a captivating total of 126 hours of facilitating activity.",
+        "Compile the materials and collaborate closely with our internal team of facilitators to craft a delightful and engaging classroom experience"
+      ]
+    },
+    {
+      "company": "PT. Musashi Auto Parts Indonesia",
+      "position": "Artificial Intelligence Engineer (Computer Vision)",
+      "website": "https://www.binaracademy.com/",
+      "startDate": "2019-02-14",
+      "endDate": "2020-02-14",
+      "summary": "Vehicle auto-parts manufacturing",
+      "highlights": [
+        "Designed an automated visual inspection, an AI-based machine. Fine-tuned the data collection specifications, cleaned and enriched datasets, and explored hyperparameter adjustments to elevate our AI model's performance. Along the way, we even employ Computer Vision techniques to curate the perfect dataset.",
+        "Craft a state-of-the-art part counter system that involves object detection, Computer Vision for object identification, and tracking, promising a seamless and efficient system",
+        "Enhancing the document information extraction process, covering both handwritten and computer-generated content. Our toolbox includes OCR (optical character recognition) techniques, Computer Vision, and Deep Learning (CNN) to streamline this procedure"
+      ]
+    },
+    {
+      "company": "PT. Dirgantara Indonesia",
+      "position": "Artificial Intelligence Engineer (Computer Vision)",
+      "website": "https://www.binaracademy.com/",
+      "startDate": "2013-09-01",
+      "endDate": "2015-05-31",
+      "summary": "Indonesian aerospace company involved in aircraft design, development, and manufacture ",
+      "highlights": [
+        "Develop the aircraft's electrical system, starting with the creation of wiring designs, harness designs, and the allocation of specific electrical components based on the specifications provided by specialists."
       ]
     }
   ],
