@@ -2,8 +2,8 @@
 layout: project
 type: project
 image: img/prosa/prosa-logo.png
-title: "Preprocessing System for Speech Enhancement"
-date: 2020
+title: "Design a wake-up word algorithm"
+date: 2021
 published: true
 labels:
   - Artificial Intelligence
