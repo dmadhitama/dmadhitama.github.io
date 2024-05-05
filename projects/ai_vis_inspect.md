@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/musashi/ai-vis-inspect.png
+image: img/musashi/musashi-logo.png
 title: "AI-based Automatic Visual Inspection Machine"
 date: 2019
 published: true

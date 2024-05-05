@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/musashi/part-count-cover.gif
+image: img/musashi/musashi-logo.png
 title: "Auto-Parts Counter System"
 date: 2019
 published: true
