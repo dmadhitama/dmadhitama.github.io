@@ -7,6 +7,17 @@ date: 2019
 published: true
 labels:
   - Artificial Intelligence
+  - Machine Learning
+  - Deep Learning
+  - Object Detection
+  - Computer Vision
+  - Python
+  - Keras
+  - Tensorflow
+  - OpenCV
+  - Scikit-Learn
+  - Matplotlib
+  - Scipy
 summary: "A responsive web application for travel planning that my team developed in ICS 415."
 ---
 

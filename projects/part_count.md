@@ -7,6 +7,18 @@ date: 2019
 published: true
 labels:
   - Artificial Intelligence
+  - Machine Learning
+  - Deep Learning
+  - Object Detection
+  - Object Tracking
+  - Computer Vision
+  - Python
+  - Keras
+  - Tensorflow
+  - OpenCV
+  - Scikit-Learn
+  - Matplotlib
+  - Scipy
 summary: "Developed advanced auto-parts counter using object detection and tracking, aiming to replace weight-scaling method, showing promising results."
 ---
 
