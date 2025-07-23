@@ -3,243 +3,491 @@ title: Resume
 layout: home
 ---
 
-<div style="background-color: var(--tf-page-bg-color)" class="bg-gradient py-3">
-  <div class="container">
+<style>
+  .resume-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+  }
+  
+  .resume-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  
+  .resume-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a5568;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+  }
+  
+  .contact-item:hover {
+    color: #2b6cb0;
+    background-color: #ebf8ff;
+    transform: translateY(-1px);
+  }
+  
+  .section {
+    margin-bottom: 3rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3182ce;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 3rem;
+    height: 2px;
+    background: linear-gradient(90deg, #3182ce, #63b3ed);
+  }
+  
+  .entry {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+  }
+  
+  .entry:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .entry-title {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1.125rem;
+    margin: 0;
+  }
+  
+  .entry-organization {
+    color: #4a5568;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .entry-date {
+    color: #718096;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: #f7fafc;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+  }
+  
+  .entry-summary {
+    color: #4a5568;
+    margin: 0.75rem 0;
+    line-height: 1.6;
+  }
+  
+  .entry-website {
+    color: #3182ce;
+    text-decoration: none;
+    font-size: 0.875rem;
+    margin: 0.5rem 0;
+    display: inline-block;
+  }
+  
+  .entry-website:hover {
+    color: #2c5282;
+    text-decoration: underline;
+  }
+  
+  .highlights {
+    margin-top: 1rem;
+  }
+  
+  .highlights ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  
+  .highlights li {
+    color: #4a5568;
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .skill-category {
+    background: #ffffff;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skill-name {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skill-keywords {
+    color: #4a5568;
+    line-height: 1.5;
+  }
+  
+  .interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .interest-tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+    transition: all 0.2s ease;
+  }
+  
+  .interest-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+  }
+  
+  @media (max-width: 768px) {
+    .resume-container {
+      padding: 1rem;
+    }
+    
+    .resume-name {
+      font-size: 2rem;
+    }
+    
+    .contact-info {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .entry-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .entry-date {
+      align-self: flex-start;
+    }
+    
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 
-    <div class="row">
-      <div class="col">
-        <h1 class="display-4 text-center">{{ site.data.bio.basics.name }}</h1>
+<div class="resume-container">
+  <!-- Header Section -->
+  <header class="resume-header">
+    <h1 class="resume-name">{{ site.data.bio.basics.name }}</h1>
+    
+    <div class="contact-info">
+      {% capture url %}{{ site.data.bio.basics.website }}{% endcapture %}
+      {% capture label %}{{ site.data.bio.basics.website | remove: "http://" | remove: "https://" }}{% endcapture %}
+      <a href="{{ url }}" class="contact-item" title="Website">
+        {% include about/social.html url=url name='house' label=label %}
+      </a>
+
+      {% capture url %}mailto:{{ site.data.bio.basics.email }}{% endcapture %}
+      {% capture label %}{{ site.data.bio.basics.email }}{% endcapture %}
+      <a href="{{ url }}" class="contact-item" title="Email">
+        {% include about/social.html url=url name='envelope' label=label %}
+      </a>
+
+      {% for profile in site.data.bio.basics.profiles %}
+        {% capture url %}{{ profile.url }}{% endcapture %}
+        {% capture name %}{{ profile.network | downcase }}{% endcapture %}
+        {% capture label %}{{ profile.username }}{% endcapture %}
+        <a href="{{ url }}" class="contact-item" title="{{ profile.network }}">
+          {% include about/social.html url=url name=name label=label %}
+        </a>
+      {% endfor %}
+      
+      <div class="contact-item">
+        <span>{{ site.data.bio.basics.location.city }}, {{ site.data.bio.basics.location.region }}</span>
       </div>
+      
+      {% if site.data.bio.basics.phone %}
+      <div class="contact-item">
+        <span>{{ site.data.bio.basics.phone }}</span>
+      </div>
+      {% endif %}
     </div>
+  </header>
 
-    <div class="row">
-      <div class="col">
-        {% capture url %}{{ site.data.bio.basics.website }}{% endcapture %}
-        {% capture label %}{{ site.data.bio.basics.website | remove: "http://" | remove: "https://" }}{% endcapture %}
-        <p class="mb-1">{% include about/social.html url=url name='house' label=label %} </p>
-
-        {% capture url %}mailto:{{ site.data.bio.basics.email }}{% endcapture %}
-        {% capture label %}{{ site.data.bio.basics.email }}{% endcapture %}
-        <p class="mb-1">{% include about/social.html url=url name='envelope' label=label %}</p>
-
-        {% for profile in site.data.bio.basics.profiles %}
-          {% capture url %}{{ profile.url }}{% endcapture %}
-          {% capture name %}{{ profile.network | downcase }}{% endcapture %}
-          {% capture label %}{{ profile.username }}{% endcapture %}
-          <p class="mb-1">{% include about/social.html url=url name=name label=label %}</p>
-        {% endfor %}
-      </div>
-      <div class="col">
-        <p class="mb-1 text-end">{{ site.data.bio.basics.location.address }}</p>
-        <p class="mb-1 text-end">{{ site.data.bio.basics.location.city }}, {{ site.data.bio.basics.location.region }} {{ site.data.bio.basics.location.postalCode }} {{ site.data.bio.basics.location.countryCode }}</p>
-        <p class="mb-1 text-end">{{ site.data.bio.basics.phone }}</p>
-      </div>
-    </div>
-
-    <div class="row pt-4 align-items-center">
-      <div class="col-lg-3">
-        <h1 class="display-6 text-start m-0">Interests</h1>
-      </div>
-      <div class="col-lg-9">
-        <p class="m-0">
-          {% for entry in site.data.bio.interests %}
+  <!-- Interests Section -->
+  {% if site.data.bio.interests %}
+  <section class="section">
+    <h2 class="section-title">Interests</h2>
+    <div class="interests-list">
+      {% for entry in site.data.bio.interests %}
+        <span class="interest-tag">
           {{ entry.name }}
-          <!-- Unfortunately the following must all be on a single line so that there are no spaces before the commas. -->
-          {% if entry.keywords and entry.keywords.size > 0 %}({% for keyword in entry.keywords %}{{ keyword }}{% if forloop.last != true %},{% endif %}{% endfor %}){% endif %}{% if forloop.last != true %}, {% endif %}
-          {% endfor %}
-        </p>
-      </div>
+          {% if entry.keywords and entry.keywords.size > 0 %}
+            ({% for keyword in entry.keywords %}{{ keyword }}{% if forloop.last != true %}, {% endif %}{% endfor %})
+          {% endif %}
+        </span>
+      {% endfor %}
     </div>
+  </section>
+  {% endif %}
 
-    {% if site.data.bio.skills %}
-    <div class="row pt-4 align-items-center">
-      <div class="col-lg-3">
-        <h1 class="display-6 text-start m-0">Skills</h1>
-      </div>
-      <div class="col-lg-9">
-        {% for entry in site.data.bio.skills %}
-          <p class="m-0">
-            <b>{{ entry.name }}:</b>
-              {% for keyword in entry.keywords %}
-                {{ keyword }}{% if forloop.last != true %}, {% endif %}
-              {% endfor %}
-          </p>
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
-
-    {% if site.data.bio.education %}
-    <div class="row pt-4 align-items-start">
-      <div class="col-lg-3">
-        <h1 class="display-6 text-start m-0">Education</h1>
-      </div>
-      <div class="col-lg-9">
-        {% for entry in site.data.bio.education %}
-          <div class="row mb-3">
-            <div class="col-9">
-              <p class="m-0"><b>{{ entry.institution }}</b></p>
-              <p class="m-0">{{ entry.studyType }}, {{ entry.area }}</p>
-              {% if entry.courses %}
-                <ul>
-                  {% for course in entry.courses %}
-                    <li>{{ course }}</li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </div>
-          <div class="col-3">
-            <p class="m-0 text-end">
-              {% if entry.startDate %}
-                {{ entry.startDate | slice: 0,4 }}
-              {% endif %}
-              {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
-              -
-              {% endif %}
-              {% if entry.endDate %}
-                {% if entry.endDate != "Present" %}
-                  {{ entry.endDate | slice: 0,4 }}
-                {% else %}
-                  {{ entry.endDate }}
-                {% endif %}
-              {% endif %}
-            </p>
+  <!-- Skills Section -->
+  {% if site.data.bio.skills %}
+  <section class="section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      {% for entry in site.data.bio.skills %}
+        <div class="skill-category">
+          <div class="skill-name">{{ entry.name }}</div>
+          <div class="skill-keywords">
+            {% for keyword in entry.keywords %}
+              {{ keyword }}{% if forloop.last != true %}, {% endif %}
+            {% endfor %}
           </div>
         </div>
-        {% endfor %}
-      </div>
+      {% endfor %}
     </div>
-    {% endif %}
+  </section>
+  {% endif %}
 
-    {% if site.data.bio.work %}
-    <div class="row pt-4 align-items-start">
-      <div class="col-lg-3">
-        <h1 class="display-6 text-start m-0">Work</h1>
-      </div>
-      <div class="col-lg-9">
-        {% for entry in site.data.bio.work %}
-          <div class="row mb-3">
-            <div class="col-9">
-              <p class="mb-0"><b>{{ entry.position }}, {{ entry.company }}</b></p>
-              <p class="mb-0"><a href="{{ entry.website }}">{{ entry.website | remove: "http://" | remove: "https://" }}</a></p>
-              <p class="mb-0">{{ entry.summary }}</p>
-              {% if entry.highlights %}
-                <ul>
-                  {% for highlight in entry.highlights %}
-                    <li>{{ highlight }}</li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </div>
-            <div class="col-3">
-              <p class="m-0 text-end">
-                {% if entry.startDate %}
-                  {{ entry.startDate | slice: 0,4 }}
-                {% endif %}
-                {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
-                -
-                {% endif %}
-                {% if entry.endDate %}
-                {% if entry.endDate != "Present" %}
-                  {{ entry.endDate | slice: 0,4 }}
-                {% else %}
-                  {{ entry.endDate }}
-                {% endif %}
-              {% endif %}
-              </p>
-            </div>
+  <!-- Education Section -->
+  {% if site.data.bio.education %}
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    {% for entry in site.data.bio.education %}
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <h3 class="entry-title">{{ entry.institution }}</h3>
+            <p class="entry-organization">{{ entry.studyType }}, {{ entry.area }}</p>
           </div>
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
-
-    {% if site.data.bio.volunteer %}
-      <div class="row pt-4 align-items-start">
-        <div class="col-lg-3">
-          <h1 class="display-6 text-start m-0">Activities</h1>
-        </div>
-        <div class="col-lg-9">
-          {% for entry in site.data.bio.volunteer %}
-          <div class="row mb-3">
-            <div class="col-9">
-              <p class="mb-0"><b>{{ entry.position }}{% if entry.organization %}, {{ entry.organization }}{% endif %}</b></p>
-              <p class="mb-0"><a href="{{ entry.website }}">{{ entry.website | remove: "http://" | remove: "https://" }}</a></p>
-              <p class="mb-0">{{ entry.summary }}</p>
-              {% if entry.highlights %}
-                <ul>
-                {% for highlight in entry.highlights %}
-                  <li>{{ highlight }}</li>
-                {% endfor %}
-              </ul>
-              {% endif %}
-            </div>
-            <div class="col-3">
-              <p class="m-0 text-end">
-                {% if entry.startDate %}
-                  {{ entry.startDate | slice: 0,4 }}
-                {% endif %}
-                {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
-                -
-                {% endif %}
-                {% if entry.endDate %}
-                  {% if entry.endDate != "Present" %}
-                    {{ entry.endDate | slice: 0,4 }}
-                  {% else %}
-                    {{ entry.endDate }}
-                  {% endif %}
-                {% endif %}
-              </p>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
-
-    {% if site.data.bio.awards %}
-    <div class="row pt-4 align-items-start">
-      <div class="col-lg-3">
-        <h1 class="display-6 text-start m-0">Awards</h1>
-      </div>
-
-      <div class="col-lg-9">
-      {% for entry in site.data.bio.awards %}
-        <div class="row mb-3">
-          <div class="col-9">
-            <p class="mb-0">
-              <b>{{ entry.title }}</b>, {{ entry.awarder }}
-            </p>
-            <p class="mb-0">{{ entry.summary }}</p>
-          </div>
-          <div class="col-3">
-            <p class="m-0 text-end">
-              {{ entry.date}}
-            </p>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
-
-    {% if site.data.bio.references %}
-    <div class="row pt-4 align-items-center">
-      <div class="col-lg-3">
-        <h1 class="display-6 text-start m-0">References</h1>
-      </div>
-
-      <div class="col-lg-9">
-        <p class="m-0">
-          {% for entry in site.data.bio.references %}
-            {{ entry.name }}
-            {% if entry.reference and entry.reference.size > 0 %}
-              <em>{{ entry.reference }}</em>
+          <div class="entry-date">
+            {% if entry.startDate %}
+              {{ entry.startDate | slice: 0,4 }}
             {% endif %}
-          {% endfor %}
-        </p>
+            {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
+              -
+            {% endif %}
+            {% if entry.endDate %}
+              {% if entry.endDate != "Present" %}
+                {{ entry.endDate | slice: 0,4 }}
+              {% else %}
+                {{ entry.endDate }}
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+        {% if entry.courses %}
+          <div class="highlights">
+            <ul>
+              {% for course in entry.courses %}
+                <li>{{ course }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
       </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <!-- Work Experience Section -->
+  {% if site.data.bio.work %}
+  <section class="section">
+    <h2 class="section-title">Work Experience</h2>
+    {% for entry in site.data.bio.work %}
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <h3 class="entry-title">{{ entry.position }}</h3>
+            {% if entry.company %}
+              <p class="entry-organization">{{ entry.company }}</p>
+            {% endif %}
+          </div>
+          <div class="entry-date">
+            {% if entry.startDate %}
+              {{ entry.startDate | slice: 0,4 }}
+            {% endif %}
+            {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
+              -
+            {% endif %}
+            {% if entry.endDate %}
+              {% if entry.endDate != "Present" %}
+                {{ entry.endDate | slice: 0,4 }}
+              {% else %}
+                {{ entry.endDate }}
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+        {% if entry.website %}
+          <a href="{{ entry.website }}" class="entry-website" target="_blank" rel="noopener">
+            {{ entry.website | remove: "http://" | remove: "https://" }}
+          </a>
+        {% endif %}
+        {% if entry.summary %}
+          <p class="entry-summary">{{ entry.summary }}</p>
+        {% endif %}
+        {% if entry.highlights %}
+          <div class="highlights">
+            <ul>
+              {% for highlight in entry.highlights %}
+                <li>{{ highlight }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <!-- Activities Section -->
+  {% if site.data.bio.volunteer %}
+  <section class="section">
+    <h2 class="section-title">Activities & Volunteer Work</h2>
+    {% for entry in site.data.bio.volunteer %}
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <h3 class="entry-title">{{ entry.position }}</h3>
+            {% if entry.organization %}
+              <p class="entry-organization">{{ entry.organization }}</p>
+            {% endif %}
+          </div>
+          <div class="entry-date">
+            {% if entry.startDate %}
+              {{ entry.startDate | slice: 0,4 }}
+            {% endif %}
+            {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
+              -
+            {% endif %}
+            {% if entry.endDate %}
+              {% if entry.endDate != "Present" %}
+                {{ entry.endDate | slice: 0,4 }}
+              {% else %}
+                {{ entry.endDate }}
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+        {% if entry.website %}
+          <a href="{{ entry.website }}" class="entry-website" target="_blank" rel="noopener">
+            {{ entry.website | remove: "http://" | remove: "https://" }}
+          </a>
+        {% endif %}
+        {% if entry.summary %}
+          <p class="entry-summary">{{ entry.summary }}</p>
+        {% endif %}
+        {% if entry.highlights %}
+          <div class="highlights">
+            <ul>
+              {% for highlight in entry.highlights %}
+                <li>{{ highlight }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <!-- Awards Section -->
+  {% if site.data.bio.awards %}
+  <section class="section">
+    <h2 class="section-title">Awards & Recognition</h2>
+    {% for entry in site.data.bio.awards %}
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <h3 class="entry-title">{{ entry.title }}</h3>
+            <p class="entry-organization">{{ entry.awarder }}</p>
+          </div>
+          <div class="entry-date">{{ entry.date }}</div>
+        </div>
+        {% if entry.summary %}
+          <p class="entry-summary">{{ entry.summary }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <!-- References Section -->
+  {% if site.data.bio.references %}
+  <section class="section">
+    <h2 class="section-title">References</h2>
+    <div class="entry">
+      {% for entry in site.data.bio.references %}
+        <div style="margin-bottom: 1rem;">
+          <strong>{{ entry.name }}</strong>
+          {% if entry.reference and entry.reference.size > 0 %}
+            <br><em style="color: #4a5568;">{{ entry.reference }}</em>
+          {% endif %}
+        </div>
+      {% endfor %}
     </div>
-    {% endif %}
-  </div>
+  </section>
+  {% endif %}
 </div>
