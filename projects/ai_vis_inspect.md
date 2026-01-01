@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/musashi/musashi-logo.png
+image: /img/musashi/musashi-logo.png
 title: "AI-based Automatic Visual Inspection Machine"
 date: 2019
 published: true
@@ -21,7 +21,7 @@ labels:
 summary: "A responsive web application for travel planning that my team developed in ICS 415."
 ---
 
-<img class="img-fluid" src="../img/musashi/ai-vis-inspect.png">
+<img class="img-fluid" src="/img/musashi/ai-vis-inspect.png">
 
 ## Objective
 The primary objective of the project is to develop an AI-powered automated visual inspection system tailored for inspecting camshafts, potentially supplementing or substituting human inspectors. Our initial challenge lay in initiating and advancing this novel endeavor. Below, I delineate the progression of our project's development:

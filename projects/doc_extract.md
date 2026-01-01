@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/musashi/musashi-logo.png
+image: /img/musashi/musashi-logo.png
 title: "Paper Document Information Extraction"
 date: 2019
 published: true
@@ -20,7 +20,7 @@ labels:
 summary: "Developing automated document information extraction system for handwritten and computer-generated text, employing segmentation, AI models, and OCR techniques."
 ---
 
-<img class="img-fluid" src="../img/musashi/doc-extract.png">
+<img class="img-fluid" src="/img/musashi/doc-extract.png">
 
 ## Objective
 The objective of this project is to develop an automated system capable of extracting information from paper documents. These documents consist of both handwritten and computer-generated text, all of which necessitate extraction. This project can be divided into two methods:

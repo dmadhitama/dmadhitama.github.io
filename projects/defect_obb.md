@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/sju/sju-logo.png
+image: /img/sju/sju-logo.png
 title: "LED Defect Detection (With Oriented Bounding Box)"
 date: 2023
 published: true
@@ -20,7 +20,7 @@ labels:
 summary: "Developed AI system to detect LED defects on PCBs, adapting model to generate oriented bounding boxes for tilted LEDs. Established baseline and improved it."
 ---
 
-<img class="img-fluid" src="../img/sju/oriented-bbox.jpg">
+<img class="img-fluid" src="/img/sju/oriented-bbox.jpg">
 
 ## Objective
 This project, initiated by a company, aims to detect defects in LED installations on PCBs. LED defects are determined by the angle of installation; a non-defective LED is installed without tilting, while a tilted LED requires the AI model to generate an oriented bounding box, including its angle.

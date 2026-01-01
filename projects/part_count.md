@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/musashi/musashi-logo.png
+image: /img/musashi/musashi-logo.png
 title: "Auto-Parts Counter System"
 date: 2019
 published: true
@@ -22,7 +22,7 @@ labels:
 summary: "Developed advanced auto-parts counter using object detection and tracking, aiming to replace weight-scaling method, showing promising results."
 ---
 
-<img class="img-fluid" src="../img/musashi/part-count.png">
+<img class="img-fluid" src="/img/musashi/part-count.png">
 
 ## Objective
 We designed a cutting-edge auto-parts counter system, integrating object detection, computer vision for object identification, and tracking capabilities. This initiative aimed to supplant the conventional weight-scaling method previously employed for auto-parts counting. The former method's susceptibility to errors due to slight variations in the weight of each produced auto-part necessitated a more precise solution, which our AI-based auto-parts counter system provides. Herein, I outline the progress made in this project up to February 2020.

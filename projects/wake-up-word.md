@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/prosa/prosa-logo.png
+image: /img/prosa/prosa-logo.png
 title: "Design a wake-up word algorithm"
 date: 2021
 published: true
@@ -25,7 +25,7 @@ labels:
 summary: "Implemented wake-up word feature for ASR applications, defining trigger phrases and experimenting with speech features like MFCC and PLP."
 ---
 
-<img class="img-fluid" src="../img/prosa/wake-up-word.png">
+<img class="img-fluid" src="/img/prosa/wake-up-word.png">
 
 ## Objective
 The wake-up word project was launched to streamline certain speech applications. Instead of manually activating an Automatic Speech Recognition (ASR) application with a trigger button, the wake-up word feature allows for activation by specific user commands, such as "Hello system!" or "OK system!". Developing and experimenting with the wake-up word system is relatively straightforward.

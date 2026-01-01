@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/sju/sju-logo.png
+image: /img/sju/sju-logo.png
 title: "Multilabel Video Classification"
 date: 2023
 published: true
@@ -21,7 +21,7 @@ labels:
 summary: "Reproduced FrameExit paper's SOTA results in video recognition using HVU dataset, overcoming challenges with existing models, achieving 49.28% mAP."
 ---
 
-<img class="img-fluid" src="../img/sju/multilabel.jpg">
+<img class="img-fluid" src="/img/sju/multilabel.jpg">
 
 ## Objective
 The purpose of this project is to reproduce the SOTA result of FrameExit: Conditional Early Exiting for Efficient Video Recognition paper.

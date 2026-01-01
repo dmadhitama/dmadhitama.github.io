@@ -19,11 +19,11 @@ export default async function Home() {
     );
   }
 
-  const { name, label, email, summary, profiles } = bioContent.frontmatter;
+  const { name, label, email, summary, profiles, picture } = bioContent.frontmatter;
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
-      <Hero bio={{ basics: { name, label, summary, email, profiles } }} />
+      <Hero bio={{ basics: { name, label, summary, email, profiles, picture } }} />
       
       {/* Featured Projects Section */}
       <section className="py-24 bg-gray-50 dark:bg-gray-900/50">

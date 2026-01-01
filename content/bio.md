@@ -3,6 +3,7 @@ name: "Donny M. Adhitama"
 label: "AI/ML Engineer & Data Scientist"
 email: "dm.adhitama@gmail.com"
 phone: ""
+picture: "/img/image.jpg"
 website: "https://dmadhitama.github.io"
 summary: "Experienced AI/ML Engineer and Data Scientist specializing in computer vision, natural language processing, and deep learning. Passionate about building intelligent systems that solve real-world problems."
 location:

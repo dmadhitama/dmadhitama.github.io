@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/prosa/prosa-logo.png
+image: /img/prosa/prosa-logo.png
 title: "Design a noise robust VAD algorithm"
 date: 2022
 published: true
@@ -25,7 +25,7 @@ labels:
 summary: "Implemented novel Voice Activity Detection (VAD) algorithm using digital signal processing (DSP) techniques, reducing computational costs without deep learning models."
 ---
 
-<img class="img-fluid" src="../img/prosa/vad.png">
+<img class="img-fluid" src="/img/prosa/vad.png">
 
 ## Objective
 To enhance efficiency and accuracy, a novel approach to Voice Activity Detection (VAD) algorithm design was devised. VAD typically identifies silence segments within speech signal audio. By accurately detecting and localizing these segments, we can effectively segment the entire speech signal. This segmentation is crucial for reducing the computational cost of decoding in the Automatic Speech Recognition (ASR) model.

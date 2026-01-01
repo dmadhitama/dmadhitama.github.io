@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/prosa/prosa-logo.png
+image: /img/prosa/prosa-logo.png
 title: "Enhance Existing Automatic Speech Recognition Model"
 date: 2023
 published: true
@@ -24,7 +24,7 @@ labels:
 summary: "Focused on long-term maintenance and improvement of Automatic Speech Recognition (ASR) model, updating with new datasets, training acoustic and language models iteratively."
 ---
 
-<img class="img-fluid" src="../img/prosa/asr.png">
+<img class="img-fluid" src="/img/prosa/asr.png">
 
 ## Objective
 This is a well-established long-term project aimed at maintaining and enhancing the existing Automatic Speech Recognition (ASR) model or potentially developing a new one to yield superior results. My primary focus within this domain is on maintaining and advancing the traditional ASR model, which consists of two key components: an acoustic model (AM) and a language model (LM).

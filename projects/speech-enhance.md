@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/prosa/prosa-logo.png
+image: /img/prosa/prosa-logo.png
 title: "Preprocessing System for Speech Enhancement"
 date: 2020
 published: true
@@ -25,7 +25,7 @@ labels:
 summary: "Developed preprocessing methods for speech signal enhancement: noise removal, dereverberation, and speaker separation, utilizing AI models for effectiveness."
 ---
 
-<img class="img-fluid" src="../img/prosa/speech-enhance.png">
+<img class="img-fluid" src="/img/prosa/speech-enhance.png">
 
 ## Objective
 Design a preprocessing system to enhance speech signal before it proceeds to the ASR (automatic speech recognition) models. There are some approaches that I worked on, for instance, noise-removal, dereverberation, and speaker separation for overlapping speaker cases.

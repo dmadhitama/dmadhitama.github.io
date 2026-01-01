@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/sju/sju-logo.png
+image: /img/sju/sju-logo.png
 title: "PCB Defect Classification"
 date: 2023
 published: true
@@ -21,7 +21,7 @@ labels:
 summary: "Replicated SOTA paper on PCB defect classification, augmented dataset, fine-tuned models, enhancing results. Detailed results available in portfolio."
 ---
 
-<img class="img-fluid" src="../img/sju/pcb-defect.png">
+<img class="img-fluid" src="/img/sju/pcb-defect.png">
 
 ## Objective
 This project involved replicating a State-of-the-Art (SOTA) paper concerning defect classification in PCB images and enhancing the results through fine-tuning existing models.
@@ -30,4 +30,4 @@ The PCB dataset contained six defect types, necessitating dataset augmentation d
 For further insight, I have included detailed results in this portfolio.
 
 ## Results
-<img class="img-fluid" src="../img/sju/pcb-defect-res.png">
+<img class="img-fluid" src="/img/sju/pcb-defect-res.png">

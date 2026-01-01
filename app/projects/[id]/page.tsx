@@ -20,6 +20,11 @@ export default async function ProjectPage({ params }: { params: { id: string } }
 
   const htmlContent = await marked(project.content);
 
+  // Ensure image path is correct (handle leading slash)
+  const imagePath = project.image 
+    ? (project.image.startsWith('/') ? project.image : `/${project.image}`)
+    : null;
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 py-12 transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,10 +37,10 @@ export default async function ProjectPage({ params }: { params: { id: string } }
         </Link>
 
         <article className="bg-white dark:bg-gray-900 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
-          {project.image && (
+          {imagePath && (
             <div className="relative h-64 md:h-[400px] overflow-hidden">
               <img
-                src={`/${project.image}`}
+                src={imagePath}
                 alt={project.title}
                 className="w-full h-full object-cover"
               />
@@ -49,11 +54,12 @@ export default async function ProjectPage({ params }: { params: { id: string } }
           )}
 
           <div className="p-8 md:p-12">
-            {!project.image && (
+            {!imagePath && (
               <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-8">
                 {project.title}
               </h1>
             )}
+
 
             <div className="flex flex-wrap items-center gap-6 mb-10 pb-8 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 font-medium">
