@@ -1,17 +1,16 @@
 # Education
 
-## Master of Science in Computer Science
-**University Name** | *2016 - 2018*
+## Master of Science in Electrical Engineering
 
-- Specialization in Artificial Intelligence and Machine Learning
-- Thesis: "Deep Learning Approaches for Image Classification"
-- GPA: 3.8/4.0
+**Institut Teknologi Bandung** | *2015 - 2018*
+
+- Specialization in Artificial Intelligence and Machine Learning on Digital Signal Processing
+- Focus on Biomedical Engineering research groups
 
 ---
 
-## Bachelor of Science in Computer Science
-**University Name** | *2012 - 2016*
+## Bachelor of Engineering in Telecommunication Engineering
 
-- Focus on Software Engineering and Data Structures
-- Dean's List (4 semesters)
-- GPA: 3.7/4.0
+**Telkom University** | *2008 - 2013*
+
+- Focus on Digital Signal Processing for any kind of data form

@@ -1,29 +1,16 @@
 # Skills
 
-## Programming Languages
-- **Expert:** Python, SQL
-- **Proficient:** JavaScript, TypeScript, Java
-- **Familiar:** C++, Go, R
+## Tech Stacks
+- **Languages:** Python, C/C++, Bash Scripting, Matlab, Kaldi
+- **AI Frameworks:** TensorFlow, PyTorch, Scikit-Learn, Langchain, Langgraph, Langsmith, VLLM, Ollama
+- **Computer Vision & Signal:** OpenCV, Matplotlib, Seaborn
+- **Databases:** SQLite, MySQL, PostgreSQL, Bigquery, PGVector, FAISS, Qdrant, Elasticsearch
+- **Cloud & DevOps:** GCP, AWS, Azure, Docker
+- **Backend:** FastAPI, Flask
+- **Data Visualization:** Google Looker, Apache Superset
 
-## Machine Learning & AI
-- Deep Learning (TensorFlow, PyTorch, Keras)
-- Computer Vision (OpenCV, YOLO, ResNet)
-- Natural Language Processing (BERT, GPT, Transformers)
-- MLOps (MLflow, Kubeflow, SageMaker)
-
-## Data Engineering
-- Data Processing (Pandas, NumPy, Spark)
-- Databases (PostgreSQL, MongoDB, Redis)
-- Data Visualization (Matplotlib, Seaborn, Plotly)
-- ETL Pipelines (Airflow, Luigi)
-
-## Cloud & DevOps
-- AWS (EC2, S3, Lambda, SageMaker)
-- Docker & Kubernetes
-- CI/CD (GitHub Actions, Jenkins)
-- Version Control (Git, GitHub)
-
-## Web Development
-- Frontend (React, Next.js, TypeScript)
-- Backend (FastAPI, Flask, Node.js)
-- REST APIs & GraphQL
+## Core Expertise
+- **Artificial Intelligence:** Deep Learning, Machine Learning, Generative AI, Agentic AI
+- **Domain Specialization:** Digital Signal Processing, Computer Vision, Natural Language Processing, Speech Processing
+- **Data Science:** Data Analysis, Data Visualization, RDBMS, Vector Database
+- **Management:** Product Management, Scrum, Cloud Computing

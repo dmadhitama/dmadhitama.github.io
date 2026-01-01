@@ -1,14 +1,14 @@
 # Interests
 
 ## Professional Interests
-- **Artificial Intelligence:** Exploring cutting-edge AI research and applications
-- **Computer Vision:** Building systems that can see and understand visual data
-- **Natural Language Processing:** Creating intelligent language understanding systems
-- **MLOps:** Deploying and maintaining ML models in production
-- **Open Source:** Contributing to and learning from open source projects
+- **Agentic AI & LLMs:** Exploring the frontier of autonomous AI agents and advanced language model implementations.
+- **Speech & Signal Processing:** Deepening expertise in ASR, TTS, and multi-modal voice AI solutions.
+- **Computer Vision:** Advancing automated visual inspection and defect detection technologies.
+- **AI Product Strategy:** Bridging the gap between technical AI research and market-ready products.
+- **Education:** Passionate about facilitating data science learning and digital talent upskilling.
 
 ## Personal Interests
-- **Technology Trends:** Keeping up with latest developments in AI and tech
-- **Reading:** Technical books, research papers, and tech blogs
-- **Teaching:** Mentoring junior engineers and sharing knowledge
-- **Problem Solving:** Participating in coding challenges and hackathons
+- **Emerging Tech:** Constantly learning about Generative AI trends and modern tech stacks.
+- **Biomedical Engineering:** Maintaining interest in digital signal processing for healthcare applications.
+- **Mentoring:** Empowering the next generation of data scientists and AI engineers.
+- **Problem Solving:** Designing elegant solutions for complex technical challenges.
