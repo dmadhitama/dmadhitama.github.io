@@ -3,12 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Donny M. Adhitama | Portfolio",
-  description: "A data scientist, AI engineer, programmer, and data enthusiast. All at once.",
+  title: "Donny M. Adhitama - Portfolio",
+  description: "AI/ML Engineer Portfolio",
 };
 
 export default function RootLayout({
@@ -17,11 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Navigation />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <Navigation />
+          <main className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

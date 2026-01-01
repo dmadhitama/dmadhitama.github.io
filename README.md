@@ -68,16 +68,22 @@ Open [http://localhost:3000](http://localhost:3000) to view your portfolio.
 
 ## ✏️ Content Management
 
-### Using the Admin Interface
+This portfolio uses a **simple markdown-based content system**. No database, no admin panel - just edit markdown files!
 
-1. Navigate to `/admin` in your browser
-2. Choose what you want to edit:
-   - **Bio & Resume**: Edit personal information, work experience, education
-   - **Projects**: Manage project portfolio
-   - **Essays**: Write and manage blog posts
-   - **Files**: Upload and manage images
+### Quick Start
 
-### Manual Content Editing
+All content is stored in markdown files in the `content/` folder:
+
+```
+content/
+├── bio.md          # Your personal information
+├── experience.md   # Work experience
+├── education.md    # Education history
+├── skills.md       # Technical skills
+└── interests.md    # Your interests
+```
+
+### How to Edit Content
 
 #### Edit Bio Information
 
