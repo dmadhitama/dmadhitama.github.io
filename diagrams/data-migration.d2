@@ -1,0 +1,21 @@
+...@_theme
+direction: down
+src: "SAP S/4HANA\nsource extracts" {class: io}
+spec: "Data specification\n(source → target)" {class: io}
+p: "Six-stage migration pipeline (Python)" {
+  class: group
+  e: "1 Extract" {class: box}
+  v: "2 Validate" {class: core}
+  t: "3 Transform" {class: box}
+  l: "4 Load" {class: box}
+  r: "5 Reconcile" {class: core}
+  rep: "6 Report" {class: box}
+  e -> v -> t -> l -> r -> rep {class: flow}
+}
+rules: "Validation rules\n(auto-derived)" {class: box}
+tgt: "Network infrastructure\nplatform" {class: db}
+src -> p.e {class: flow}
+spec -> rules: "parse" {class: flow}
+rules -> p.v {class: flow}
+p.l -> tgt {class: flow}
+tgt -> p.r: "target counts" {class: flow}

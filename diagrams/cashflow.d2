@@ -1,0 +1,12 @@
+...@_theme
+direction: down
+hist: "Historical cashflow\n· invoices · contracts" {class: db}
+fe: "Feature engineering\n(seasonality · lags)" {class: box}
+m: "Forecasting models\n(statistical · ML)" {class: core}
+ev: "Backtest &\nerror metrics" {class: box}
+out: "Cashflow forecast\n+ scenarios" {class: io}
+hist -> fe {class: flow}
+fe -> m {class: flow}
+m -> ev: "hold-out" {class: flow}
+ev -> m: "tune" {class: flow}
+m -> out {class: flow}

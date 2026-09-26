@@ -68,6 +68,7 @@ export interface Project {
   title: string;
   date: string;
   published: boolean;
+  type: "project" | "side-project";
   image: string;
   thumbnail: string;
   labels: string[];

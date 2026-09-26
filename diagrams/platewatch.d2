@@ -1,0 +1,19 @@
+...@_theme
+direction: down
+rep: "📱 Reporter\n(photo · video · IG link)" {class: io}
+app: "PlateWatch (Next.js PWA)" {
+  class: group
+  up: "Upload & plate\ntagging" {class: box}
+  ig: "Instagram / YouTube\nimporter (Lambda)" {class: box}
+  mod: "Moderation\nqueue" {class: core}
+  srch: "Plate search\n& history" {class: box}
+}
+db: "Supabase\n(Postgres · Auth)" {class: db}
+pub: "🔍 Public · community\n(like · comment · flag)" {class: io}
+rep -> app.up {class: flow}
+rep -> app.ig {class: flow}
+app.up -> app.mod {class: flow}
+app.ig -> app.mod {class: flow}
+app.mod -> db: "approved" {class: flow}
+db -> app.srch {class: flow}
+app.srch -> pub {class: flow}

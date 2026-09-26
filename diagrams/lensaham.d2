@@ -1,0 +1,19 @@
+...@_theme
+direction: down
+src: "Yahoo Finance ·\nTradingView · News APIs" {class: db}
+api: "Next.js API routes" {
+  class: group
+  ta: "Technical indicators\n(RSI · MACD · BB…)" {class: box}
+  sent: "News sentiment\n(keyword / LLM)" {class: box}
+  msci: "MSCI cap\nclassification" {class: box}
+  sig: "AI trading signal\n(multi-factor score)" {class: core}
+}
+fc: "Forecast model\n(Prophet on AWS Lambda)" {class: core}
+db: "Supabase\n(auth · watchlists)" {class: db}
+ui: "Dashboard · watchlist\n· asset charts" {class: io}
+src -> api {class: flow}
+api.ta -> api.sig {class: flow}
+api.sent -> api.sig {class: flow}
+fc -> api.sig {class: flow}
+api <-> db {class: flow}
+api -> ui {class: flow}

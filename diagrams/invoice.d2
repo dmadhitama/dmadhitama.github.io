@@ -1,0 +1,13 @@
+...@_theme
+direction: down
+doc: "📄 Invoice\n(scan · PDF · photo)" {class: io}
+pre: "Preprocessing\n(deskew · crop)" {class: box}
+ocr: "OCR" {class: core}
+llm: "LLM extraction\n→ structured JSON" {class: core}
+val: "Validation\n(totals · dates · tax)" {class: box}
+out: "Structured\ninvoice record" {class: db}
+doc -> pre {class: flow}
+pre -> ocr {class: flow}
+ocr -> llm: "raw text + layout" {class: flow}
+llm -> val {class: flow}
+val -> out {class: flow}

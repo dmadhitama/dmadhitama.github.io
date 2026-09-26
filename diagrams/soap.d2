@@ -1,0 +1,17 @@
+...@_theme
+direction: down
+aud: "🎙 Doctor–patient\nconversation" {class: io}
+stt: "Speech-to-text\n+ diarization" {class: box}
+llm: "LLM summarizer\n(prompt-engineered)" {class: core}
+soap: "SOAP note" {
+  class: group
+  s: "S · Subjective" {class: box}
+  o: "O · Objective" {class: box}
+  a: "A · Assessment" {class: box}
+  p: "P · Plan" {class: box}
+}
+ev: "Evaluation\n(clinician review · metrics)" {class: io}
+aud -> stt {class: flow}
+stt -> llm: "transcript" {class: flow}
+llm -> soap {class: flow}
+soap -> ev {class: flow}

@@ -1,0 +1,13 @@
+...@_theme
+direction: down
+q: "User query" {class: io}
+ret: "First-stage retrieval\n(top-N candidates)" {class: box}
+feat: "Feature builder\n(query · item · user)" {class: box}
+ltr: "LTR re-ranker\n(Learning To Rank)" {class: core}
+res: "Personalized\nranked results" {class: io}
+logs: "Click & interaction\nlogs" {class: db}
+q -> ret {class: flow}
+ret -> feat: "candidates" {class: flow}
+feat -> ltr {class: flow}
+ltr -> res {class: flow}
+logs -> ltr: "training labels" {class: flow}
