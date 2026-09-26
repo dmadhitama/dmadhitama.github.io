@@ -21,7 +21,7 @@ export function Footer() {
                 dm.adhitama@gmail.com
               </a>
             </div>
-            <p className="text-white">Data Scientist, AI Engineer, and Independent Researcher</p>
+            <p className="text-white">AI/ML Engineer and Data Scientist</p>
           </div>
 
           <div>

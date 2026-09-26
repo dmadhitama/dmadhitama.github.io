@@ -2,6 +2,7 @@
 
 ## Professional Interests
 - **Agentic AI & LLMs:** Exploring the frontier of autonomous AI agents and advanced language model implementations.
+- **Data Engineering & Migration:** Building robust, spec-driven pipelines for large-scale enterprise data migration and reconciliation.
 - **Speech & Signal Processing:** Deepening expertise in ASR, TTS, and multi-modal voice AI solutions.
 - **Computer Vision:** Advancing automated visual inspection and defect detection technologies.
 - **AI Product Strategy:** Bridging the gap between technical AI research and market-ready products.
