@@ -1,0 +1,18 @@
+...@_theme
+direction: down
+ch: "Users · Channels\n(web · chat · voice)" {class: io}
+fw: "Agentic AI framework" {
+  class: group
+  orch: "Orchestrator\nagent" {class: core}
+  a1: "Use-case\nagent A" {class: box}
+  a2: "Use-case\nagent B" {class: box}
+  tools: "Tools · MCP\n(APIs, search, DB)" {class: box}
+  orch -> a1 {class: flow}
+  orch -> a2 {class: flow}
+  a1 -> tools {class: flow}
+  a2 -> tools {class: flow}
+}
+llm: "LLMs hosted on\nIndonesian cloud" {class: db}
+ch <-> fw.orch: "request ⇄ answer" {class: flow}
+fw.a1 -> llm {class: flow}
+fw.a2 -> llm {class: flow}

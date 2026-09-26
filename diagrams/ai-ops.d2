@@ -1,0 +1,11 @@
+...@_theme
+direction: down
+logs: "Product & system\nlogs · metrics" {class: db}
+ing: "Ingest & parse" {class: box}
+det: "Anomaly & trend\nanalysis" {class: core}
+llm: "LLM summarizer\n(root-cause hints)" {class: core}
+alert: "Alerts · dashboard\n· daily digest" {class: io}
+logs -> ing {class: flow}
+ing -> det {class: flow}
+det -> llm: "anomalies" {class: flow}
+llm -> alert {class: flow}

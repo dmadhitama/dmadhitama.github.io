@@ -1,0 +1,21 @@
+...@_theme
+direction: down
+mkt: "Market data\n(yfinance OHLCV)" {class: db}
+ing: "Ingest → quality\n→ Parquet store" {class: box}
+feat: "Features & labels\n(walk-forward splits)" {class: box}
+strat: "Strategies" {
+  class: group
+  r: "Rules\n(MA · RSI · BB · ADX)" {class: box}
+  ml: "ML\n(LightGBM · XGB · LR)" {class: core}
+  fc: "Forecasters\n(ARIMA · Prophet · Chronos)" {class: core}
+}
+ens: "Ensemble +\nallocation" {class: box}
+bt: "Backtest & compare\n(Sharpe · drawdown)" {class: box}
+adv: "Daily advice\ninvest / hold / exit" {class: io}
+mkt -> ing -> feat {class: flow}
+feat -> strat.r {class: flow}
+feat -> strat.ml {class: flow}
+feat -> strat.fc {class: flow}
+strat -> ens {class: flow}
+ens -> bt {class: flow}
+bt -> adv {class: flow}

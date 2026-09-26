@@ -1,0 +1,13 @@
+...@_theme
+direction: down
+user: "🎙 Bahasa Indonesia\nspeech" {class: io}
+stt: "STT\n(speech-to-text)" {class: core}
+llm: "LLM\n(reasoning · tools)" {class: core}
+tts: "TTS\n(text-to-speech)" {class: core}
+out: "🔊 spoken answer" {class: io}
+kb: "Enterprise\nknowledge & APIs" {class: db}
+user -> stt: "audio" {class: flow}
+stt -> llm: "transcript" {class: flow}
+llm <-> kb: "tool calls" {class: flow}
+llm -> tts: "response text" {class: flow}
+tts -> out {class: flow}

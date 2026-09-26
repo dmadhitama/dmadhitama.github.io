@@ -1,0 +1,16 @@
+...@_theme
+direction: down
+u: "💬 Chat (ID / EN)\n📸 receipt photo" {class: io}
+agent: "LangGraph agent\n(Claude · 15+ tools)" {class: core}
+tools: "Tools" {
+  class: group
+  tx: "Create / query\ntransactions" {class: box}
+  acc: "Accounts · assets\n· debts" {class: box}
+  ocr: "Bill OCR\nextraction" {class: box}
+}
+db: "Supabase Postgres\n(Drizzle ORM)" {class: db}
+dash: "Dashboard · charts\n· Excel export" {class: io}
+u <-> agent: "message ⇄ reply" {class: flow}
+agent -> tools {class: flow}
+tools -> db {class: flow}
+db -> dash {class: flow}

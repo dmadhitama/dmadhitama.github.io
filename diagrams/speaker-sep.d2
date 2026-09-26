@@ -1,0 +1,18 @@
+...@_theme
+direction: down
+mix: "~∿~ Single-channel\noverlapped speech" {class: io}
+stft: "STFT" {class: box}
+enc: "Deep clustering /\nmask estimation" {class: core}
+m1: "Mask spk 1" {class: box}
+m2: "Mask spk 2" {class: box}
+s1: "~∿~ Speaker 1" {class: io}
+s2: "~∿~ Speaker 2" {class: io}
+asr: "ASR" {class: box}
+mix -> stft {class: flow}
+stft -> enc: "spectrogram" {class: flow}
+enc -> m1 {class: flow}
+enc -> m2 {class: flow}
+m1 -> s1: "iSTFT" {class: flow}
+m2 -> s2: "iSTFT" {class: flow}
+s1 -> asr {class: flow}
+s2 -> asr {class: flow}

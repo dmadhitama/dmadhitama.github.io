@@ -12,7 +12,7 @@ import { SkillBoxes } from "@/components/SkillBoxes";
 export default async function Home() {
   const bioContent = await getContentBySlug("bio");
   const skillsContent = await getContentBySlug("skills");
-  const projects = getAllProjects().slice(0, 3);
+  const projects = getAllProjects().filter((p) => p.type === "project").slice(0, 3);
 
   if (!bioContent) {
     return (
