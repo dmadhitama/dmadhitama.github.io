@@ -19,7 +19,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
 
   const htmlContent = await marked(project.content);
 
-  const imagePath = project.image
+  const logo = project.image
     ? (project.image.startsWith("/") ? project.image : `/${project.image}`)
     : null;
 
@@ -35,7 +35,10 @@ export default async function ProjectPage({ params }: { params: { id: string } }
             <span className="text-accent">/</span>
             {project.title}
           </h1>
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-muted2">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-muted2">
+            {logo && (
+              <img src={logo} alt="" className="w-8 h-8 object-contain bg-white p-0.5 border border-muted2" />
+            )}
             <span className="text-accent">{project.date}</span>
             {project.labels.map((label) => (
               <span key={label} className="border border-muted2 px-2">
@@ -44,12 +47,6 @@ export default async function ProjectPage({ params }: { params: { id: string } }
             ))}
           </div>
         </header>
-
-        {imagePath && (
-          <div className="border border-muted2 mb-10">
-            <img src={imagePath} alt={project.title} className="w-full max-h-[420px] object-cover" />
-          </div>
-        )}
 
         <div className="prose" dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </article>

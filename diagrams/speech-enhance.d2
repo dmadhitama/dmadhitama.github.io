@@ -1,0 +1,19 @@
+...@_theme
+direction: right
+noisy: "noisy\nspeech" {class: io}
+stft: "STFT" {class: box}
+pre: "#speech-enhancement" {
+  class: group
+  denoise: "Noise Removal\n(DNN mask)" {class: core}
+  dereverb: "Dereverb\n(DNN)" {class: core}
+  sep: "Speaker\nSeparation" {class: core}
+  denoise -> dereverb {class: flow}
+  dereverb -> sep {class: flow}
+}
+istft: "iSTFT" {class: box}
+asr: "ASR\nmodel" {class: box}
+noisy -> stft {class: flow}
+stft -> pre.denoise: "magnitude" {class: flow}
+stft -> istft: "phase" {class: flow; style.stroke-dash: 4}
+pre.sep -> istft {class: flow}
+istft -> asr: "enhanced\nspeech" {class: flow}

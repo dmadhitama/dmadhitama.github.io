@@ -1,0 +1,18 @@
+...@_theme
+direction: right
+user: "user says\n\"Hello system!\"" {class: io}
+device: "#on-device (TinyML)" {
+  class: group
+  mic: "Mic buffer" {class: box}
+  feat: "Features\nMFCC / PLP" {class: box}
+  kws: "Wake-word\nClassifier" {class: core}
+  mic -> feat {class: flow}
+  feat -> kws {class: flow}
+}
+cloud: "#cloud" {
+  class: group
+  asr: "ASR engine" {class: core}
+}
+user -> device.mic {class: flow}
+device.kws -> device.mic: "no match → keep listening" {class: flow; style.stroke-dash: 4}
+device.kws -> cloud.asr: "detected → activate" {class: flow}

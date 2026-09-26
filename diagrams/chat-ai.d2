@@ -1,0 +1,18 @@
+...@_theme
+direction: right
+user: "User" {class: io}
+agent: "LLM Agent\nroutes question → tools" {class: core}
+kb: "Knowledge-Based\nRetriever" {class: box}
+kbdb: "KB Vector DB\n(BigQuery)" {class: db}
+sql: "SQL Generation\n& Runner" {class: box}
+sqldb: "SQL Database\n(BigQuery)" {class: db}
+user -> agent: "question" {class: flow}
+agent -> user: "answer" {class: flow}
+agent -> kb: "knowledge question" {class: flow}
+kb -> agent: "context answer" {class: flow}
+kb -> kbdb: "similarity search" {class: flow}
+kbdb -> kb: "top-k contexts" {class: flow}
+agent -> sql: "data question" {class: flow}
+sql -> agent: "summary" {class: flow}
+sql -> sqldb: "generated query" {class: flow}
+sqldb -> sql: "result rows" {class: flow}

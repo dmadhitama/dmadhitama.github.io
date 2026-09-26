@@ -6,15 +6,26 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  const imagePath = project.image
-    ? (project.image.startsWith("/") ? project.image : `/${project.image}`)
-    : null;
+  const toPath = (src: string) => (src.startsWith("/") || src.startsWith("http") ? src : `/${src}`);
+  const thumbnail = project.thumbnail ? toPath(project.thumbnail) : null;
+  const logo = project.image && project.image !== project.thumbnail ? toPath(project.image) : null;
 
   return (
     <article className="border border-muted2 flex flex-col h-full">
-      {imagePath && (
-        <div className="h-48 overflow-hidden border-b border-muted2">
-          <img src={imagePath} alt={project.title} className="w-full h-full object-cover" />
+      {thumbnail && (
+        <div className="relative h-48 overflow-hidden border-b border-muted2 bg-ink">
+          <img
+            src={thumbnail}
+            alt={project.title}
+            className={`w-full h-full ${thumbnail.endsWith(".svg") ? "object-contain p-3" : "object-cover object-top"}`}
+          />
+          {logo && (
+            <img
+              src={logo}
+              alt=""
+              className="absolute top-2 left-2 w-9 h-9 object-contain bg-white p-1 border border-muted2"
+            />
+          )}
         </div>
       )}
 
