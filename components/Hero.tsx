@@ -8,13 +8,24 @@ interface HeroProps {
 }
 
 export function Hero({ name, label, summary, picture }: HeroProps) {
+  const roles = label
+    .split(/\s*(?:&|\band\b|,)\s*/i)
+    .map((role) => role.trim())
+    .filter(Boolean)
+    .map((role) => role.replace(/\b([A-Z][a-z]+)\b/g, (word) => word.toLowerCase()));
+  const article = /^[aeiou]/i.test(roles[0] ?? "") ? "an" : "a";
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center pt-8 pb-16">
       <div>
         <h1 className="text-3xl md:text-4xl font-semibold text-white leading-snug mb-8">
-          {name.split(" ")[0]} is an{" "}
-          <span className="text-accent">AI/ML engineer</span> and{" "}
-          <span className="text-accent">data scientist</span>
+          {name.split(" ")[0]} is {article}{" "}
+          {roles.map((role, i) => (
+            <span key={role}>
+              {i > 0 && " and "}
+              <span className="text-accent">{role}</span>
+            </span>
+          ))}
         </h1>
         <p className="text-muted2 mb-8 leading-relaxed">{summary}</p>
         <div className="flex flex-wrap gap-4">

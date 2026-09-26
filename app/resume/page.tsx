@@ -2,7 +2,7 @@ import { getContentBySlug } from "@/lib/content";
 import { parseSkillGroups } from "@/lib/skills";
 import { PageTitle, SectionTitle } from "@/components/SectionTitle";
 import { SkillBoxes } from "@/components/SkillBoxes";
-import { Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, Globe } from "lucide-react";
 
 const stripH1 = (html: string) => html.replace(/<h1[^>]*>.*?<\/h1>/, "");
 
@@ -47,7 +47,13 @@ export default async function ResumePage() {
             {profiles?.map((profile: { network: string; url: string; username: string }) => (
               <li key={profile.network}>
                 <a href={profile.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 nav-link">
-                  {profile.network.toLowerCase() === "github" ? <Github size={18} /> : <Linkedin size={18} />}
+                  {profile.network.toLowerCase() === "github" ? (
+                    <Github size={18} />
+                  ) : profile.network.toLowerCase() === "linkedin" ? (
+                    <Linkedin size={18} />
+                  ) : (
+                    <Globe size={18} />
+                  )}
                   {profile.username}
                 </a>
               </li>
