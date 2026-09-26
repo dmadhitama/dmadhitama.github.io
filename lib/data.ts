@@ -3,6 +3,8 @@ import path from 'path';
 import matter from 'gray-matter';
 import { Bio, Project, Essay } from './types';
 
+const firstImageSrc = (markdown: string) => markdown.match(/<img[^>]*\ssrc="([^"]+)"/)?.[1] ?? '';
+
 const dataDirectory = path.join(process.cwd(), '_data');
 const projectsDirectory = path.join(process.cwd(), 'projects');
 const essaysDirectory = path.join(process.cwd(), 'essays');
@@ -33,6 +35,7 @@ export function getAllProjects(): Project[] {
         date: data.date?.toString() || '',
         published: data.published !== false,
         image: data.image || '',
+        thumbnail: data.thumbnail || firstImageSrc(content) || data.image || '',
         labels: data.labels || [],
         summary: data.summary || '',
         content,
@@ -60,6 +63,7 @@ export function getProjectById(id: string): Project | null {
       date: data.date?.toString() || '',
       published: data.published !== false,
       image: data.image || '',
+      thumbnail: data.thumbnail || firstImageSrc(content) || data.image || '',
       labels: data.labels || [],
       summary: data.summary || '',
       content,

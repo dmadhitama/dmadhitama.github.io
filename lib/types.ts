@@ -69,6 +69,7 @@ export interface Project {
   date: string;
   published: boolean;
   image: string;
+  thumbnail: string;
   labels: string[];
   summary: string;
   content: string;

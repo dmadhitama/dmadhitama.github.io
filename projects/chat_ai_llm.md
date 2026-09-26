@@ -19,7 +19,7 @@ labels:
   - Matplotlib
 summary: "In-progress project: developing AI chat app for hospital group info, utilizing Language Model (LLM) tech, exploring LLM chaining, agent-based methods, and prompt engineering for accuracy."
 ---
-<img class="img-fluid" src="/img/bithealth/chat-ai.png">
+<img class="img-fluid" src="/img/bithealth/chat-ai.svg">
 
 ## Objective
 
