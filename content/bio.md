@@ -2,7 +2,7 @@
 name: "Donny Mirza Adhitama"
 label: "AI/ML Engineer & Data Scientist"
 email: "dm.adhitama@gmail.com"
-phone: "+62-82120649260"
+phone: ""
 picture: "/img/image.jpg"
 website: "https://dmadhitama.github.io"
 summary: "AI/ML Engineer and Data Scientist with 10+ years of engineering experience, 7+ of them focused on production AI across speech recognition, LLMs, agentic AI, and computer vision."
