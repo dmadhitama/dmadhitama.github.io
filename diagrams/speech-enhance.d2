@@ -1,9 +1,11 @@
 ...@_theme
-direction: right
+direction: down
 noisy: "noisy\nspeech" {class: io}
 stft: "STFT" {class: box}
 pre: "#speech-enhancement" {
   class: group
+  grid-columns: 3
+  horizontal-gap: 60
   denoise: "Noise Removal\n(DNN mask)" {class: core}
   dereverb: "Dereverb\n(DNN)" {class: core}
   sep: "Speaker\nSeparation" {class: core}

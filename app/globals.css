@@ -154,6 +154,10 @@
   @apply border border-muted2 my-6;
 }
 
+.prose img[src$=".svg"] {
+  @apply mx-auto max-h-[640px] w-auto;
+}
+
 .prose blockquote {
   @apply border-l-2 border-accent pl-4 italic my-6;
 }
