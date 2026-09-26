@@ -1,89 +1,54 @@
 import { Github, Linkedin, Instagram, Mail } from "lucide-react";
+import { Logo } from "./Logo";
+import { socialLinks } from "./socialLinks";
+
+const icons = { Email: Mail, GitHub: Github, LinkedIn: Linkedin, Instagram: Instagram };
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-12 border-t border-gray-800 dark:border-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="border-t border-muted2 mt-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Donny M. Adhitama</h3>
-            <p className="text-gray-400 dark:text-gray-500">
-              Data Scientist, AI Engineer, and Independent Researcher
-            </p>
+            <div className="flex items-center gap-4 mb-4">
+              <span className="flex items-center gap-2 text-white font-bold">
+                <Logo />
+                Donny
+              </span>
+              <a href="mailto:dm.adhitama@gmail.com" className="nav-link">
+                dm.adhitama@gmail.com
+              </a>
+            </div>
+            <p className="text-white">Data Scientist, AI Engineer, and Independent Researcher</p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="/" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/projects" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a href="/essays" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
-                  Essays
-                </a>
-              </li>
-              <li>
-                <a href="/resume" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
-                  Resume
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
-            <div className="flex space-x-4">
-              <a
-                href="mailto:dm.adhitama@gmail.com"
-                className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors"
-                aria-label="Email"
-              >
-                <Mail size={24} />
-              </a>
-              <a
-                href="http://github.com/dmadhitama"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors"
-                aria-label="GitHub"
-              >
-                <Github size={24} />
-              </a>
-              <a
-                href="http://linkedin.com/in/dm-adhitama"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a
-                href="http://instagram.com/dm_adhitama"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={24} />
-              </a>
+            <h3 className="text-2xl font-medium text-white mb-3">Media</h3>
+            <div className="flex gap-2">
+              {socialLinks.map(({ label, href }) => {
+                const Icon = icons[label];
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="p-1 text-muted2 hover:text-white transition-colors"
+                  >
+                    <Icon size={24} />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-800 dark:border-gray-900 text-center text-gray-400 dark:text-gray-500">
-          <p>&copy; {currentYear} Donny M. Adhitama. All rights reserved.</p>
-        </div>
+        <p className="mt-12 text-center text-muted2">
+          &copy; Copyright {currentYear}. Made by Donny M. Adhitama
+        </p>
       </div>
     </footer>
   );

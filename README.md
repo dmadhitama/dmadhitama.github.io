@@ -211,3 +211,14 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 ---
 
 ⭐ Star this repository if you find it helpful!
+
+## 🌐 Deployment (GitHub Pages)
+
+The site is a static Next.js export (`output: 'export'` → `out/`), deployed by `.github/workflows/main.yml` on every push to `main`.
+
+One-time setup in **Settings → Pages → Build and deployment → Source**: select **GitHub Actions**.
+(If the source is "Deploy from a branch: main", GitHub serves the raw Next.js source, which has no `index.html`, so the site returns 404.)
+
+Manual alternative: `npm run deploy` builds and pushes `out/` to the `gh-pages` branch; then set the Pages source to "Deploy from a branch: gh-pages / (root)".
+
+Design based on the "Portfolio" Figma community file by Elias (CC BY 4.0): https://www.figma.com/community/file/1164933568884615740/portfolio

@@ -1,145 +1,115 @@
+import Link from "next/link";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { getContentBySlug } from "@/lib/content";
 import { getAllProjects } from "@/lib/data";
+import { parseSkillGroups } from "@/lib/skills";
 import { Hero } from "@/components/Hero";
+import { Quote } from "@/components/Quote";
 import { ProjectCard } from "@/components/ProjectCard";
-import { Github, Linkedin, Mail, ArrowRight, Sparkles, Rocket, Brain, Code } from "lucide-react";
-import Link from "next/link";
+import { SectionTitle } from "@/components/SectionTitle";
+import { SkillBoxes } from "@/components/SkillBoxes";
 
 export default async function Home() {
   const bioContent = await getContentBySlug("bio");
   const skillsContent = await getContentBySlug("skills");
-  const interestsContent = await getContentBySlug("interests");
-  const projects = getAllProjects().slice(0, 6);
+  const projects = getAllProjects().slice(0, 3);
 
   if (!bioContent) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-600 dark:text-gray-400 font-medium">Content not found. Please ensure bio.md exists in the content folder.</p>
+        <p>Content not found. Please ensure bio.md exists in the content folder.</p>
       </div>
     );
   }
 
   const { name, label, email, summary, profiles, picture } = bioContent.frontmatter;
+  const skillGroups = skillsContent ? parseSkillGroups(skillsContent.content) : [];
+  const linkedin = profiles?.find((p: { network: string }) => p.network.toLowerCase() === "linkedin");
+  const github = profiles?.find((p: { network: string }) => p.network.toLowerCase() === "github");
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
-      <Hero bio={{ basics: { name, label, summary, email, profiles, picture } }} />
-      
-      {/* Featured Projects Section */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
-            <div>
-              <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase text-sm mb-3">
-                <Rocket size={16} />
-                <span>Portfolio</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-                Featured Projects
-              </h2>
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Hero name={name} label={label} summary={summary} picture={picture} />
+
+      <Quote text="The best way to predict the future is to invent it." author="Alan Kay" />
+
+      <section className="py-12">
+        <SectionTitle title="projects" viewAllHref="/projects/" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </section>
+
+      {skillGroups.length > 0 && (
+        <section className="py-12 relative">
+          <SectionTitle title="skills" lineWidth="w-1/3" />
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8">
+            <div className="hidden lg:block relative h-72">
+              <div className="absolute top-4 left-4 w-16 h-16 dots" />
+              <div className="absolute top-12 right-8 w-24 h-24 border border-muted2" />
+              <div className="absolute bottom-6 left-10 w-20 h-20 border border-muted2" />
+              <div className="absolute bottom-16 right-2 w-16 h-16 dots" />
             </div>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-xl">
-              A selection of my recent work in AI, Machine Learning, and Engineering.
-            </p>
+            <SkillBoxes groups={skillGroups} />
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+        </section>
+      )}
+
+      <section className="py-12">
+        <SectionTitle title="about-me" lineWidth="w-1/3" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="text-white mb-4">Hello, I&apos;m {name.split(" ")[0]}!</p>
+            <div className="prose mb-6" dangerouslySetInnerHTML={{ __html: bioContent.html.replace(/<h1[^>]*>.*?<\/h1>/, "") }} />
+            <Link href="/resume/" className="btn-primary">
+              Read more -&gt;
+            </Link>
           </div>
-          
-          {projects.length > 0 && (
-            <div className="mt-16 text-center">
-              <Link
-                href="/projects"
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-2xl hover:bg-blue-600 dark:hover:bg-blue-400 hover:text-white dark:hover:text-white transition-all shadow-lg hover:shadow-blue-500/25"
-              >
-                Explore All Projects
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+          {picture && (
+            <div className="relative mx-auto w-full max-w-xs">
+              <div className="absolute -top-4 -left-4 w-20 h-20 dots" />
+              <img src={picture} alt={name} className="relative z-10 w-full aspect-[3/4] object-cover border-b border-accent" />
+              <div className="absolute bottom-10 -right-6 w-16 h-16 dots" />
             </div>
           )}
         </div>
       </section>
 
-      {/* Skills & Interests Section */}
-      <section className="py-24 border-t border-gray-100 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Skills */}
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-purple-100 dark:bg-purple-900/50 rounded-2xl text-purple-600 dark:text-purple-400">
-                  <Brain size={28} />
-                </div>
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">Expertise</h2>
-              </div>
-              
-              <div 
-                className="prose dark:prose-invert prose-purple max-w-none prose-h2:text-xl prose-h2:font-bold prose-h2:mt-8 prose-h2:mb-4 prose-ul:pl-0 prose-li:list-none prose-li:mb-4 prose-p:text-gray-600 dark:prose-p:text-gray-400"
-                dangerouslySetInnerHTML={{ __html: skillsContent?.html || "" }}
-              />
-            </div>
-
-            {/* Interests */}
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-red-100 dark:bg-red-900/50 rounded-2xl text-red-600 dark:text-red-400">
-                  <Sparkles size={28} />
-                </div>
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">Interests</h2>
-              </div>
-              
-              <div 
-                className="prose dark:prose-invert prose-red max-w-none prose-h2:text-xl prose-h2:font-bold prose-h2:mt-8 prose-h2:mb-4 prose-p:text-gray-600 dark:prose-p:text-gray-400"
-                dangerouslySetInnerHTML={{ __html: interestsContent?.html || "" }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="py-24 bg-gray-900 dark:bg-blue-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent opacity-50" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 tracking-tight">
-            Let's build something <span className="text-blue-400">extraordinary</span>.
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-            Whether you have a specific project in mind or just want to explore the possibilities of AI, I'm always open to discussing new opportunities.
+      <section id="contacts" className="py-12 scroll-mt-24">
+        <SectionTitle title="contacts" lineWidth="w-1/4" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <p className="text-muted2">
+            I&apos;m interested in AI/ML engineering roles, research collaborations, and freelance opportunities.
+            However, if you have other request or question, don&apos;t hesitate to contact me.
           </p>
-          
-          <div className="flex flex-wrap justify-center gap-6">
-            <a
-              href={`mailto:${email}`}
-              className="flex items-center gap-3 px-8 py-4 bg-white text-gray-900 font-bold rounded-2xl hover:bg-blue-400 hover:text-white transition-all shadow-xl"
-            >
-              <Mail size={20} />
-              Get In Touch
-            </a>
-            {profiles?.map((profile: any) => {
-              if (profile.network.toLowerCase() === "linkedin") {
-                return (
-                  <a
-                    key={profile.network}
-                    href={profile.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all shadow-xl"
-                  >
-                    <Linkedin size={20} />
-                    LinkedIn
+          <div className="border border-muted2 p-4 md:justify-self-end w-full md:w-auto">
+            <p className="text-white font-semibold mb-4">Message me here</p>
+            <ul className="space-y-2">
+              <li>
+                <a href={`mailto:${email}`} className="flex items-center gap-2 nav-link">
+                  <Mail size={20} /> {email}
+                </a>
+              </li>
+              {linkedin && (
+                <li>
+                  <a href={linkedin.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 nav-link">
+                    <Linkedin size={20} /> {linkedin.username}
                   </a>
-                );
-              }
-              return null;
-            })}
+                </li>
+              )}
+              {github && (
+                <li>
+                  <a href={github.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 nav-link">
+                    <Github size={20} /> {github.username}
+                  </a>
+                </li>
+              )}
+            </ul>
           </div>
         </div>
       </section>
     </div>
   );
 }
-

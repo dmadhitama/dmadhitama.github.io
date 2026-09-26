@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Fira_Code } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { MediaSidebar } from "@/components/MediaSidebar";
 
-const inter = Inter({ subsets: ["latin"] });
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-fira-code",
+});
 
 export const metadata: Metadata = {
   title: "Donny M. Adhitama - Portfolio",
@@ -18,15 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider>
-          <Navigation />
-          <main className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+    <html lang="en">
+      <body className={`${firaCode.variable} font-mono bg-ink text-muted2`}>
+        <MediaSidebar />
+        <Navigation />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );

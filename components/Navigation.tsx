@@ -1,65 +1,68 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
+import { Logo } from "./Logo";
+
+const links = [
+  { href: "/", label: "home" },
+  { href: "/projects/", label: "projects" },
+  { href: "/essays/", label: "essays" },
+  { href: "/resume/", label: "resume" },
+];
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/essays", label: "Essays" },
-    { href: "/resume", label: "Resume" },
-  ];
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href.replace(/\/$/, ""));
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              Donny M. Adhitama
-            </Link>
-          </div>
+    <nav className="sticky top-0 z-50 bg-ink/95 backdrop-blur">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <Link href="/" className="flex items-center gap-2 text-white font-bold">
+            <Logo />
+            Donny
+          </Link>
 
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                className={isActive(link.href) ? "text-white font-medium" : "nav-link"}
               >
+                <span className="text-accent">#</span>
                 {link.label}
               </Link>
             ))}
-            <ThemeToggle />
           </div>
 
-          <div className="md:hidden flex items-center space-x-4">
-            <ThemeToggle />
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-muted2 hover:text-white"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="md:hidden fixed inset-x-0 top-20 bottom-0 bg-ink px-6 pt-8 z-50">
+          <div className="flex flex-col gap-8">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md font-medium"
+                className={`text-3xl ${isActive(link.href) ? "text-white font-medium" : "text-muted2"}`}
                 onClick={() => setIsOpen(false)}
               >
+                <span className="text-accent">#</span>
                 {link.label}
               </Link>
             ))}
